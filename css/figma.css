@@ -1,0 +1,245 @@
+/* Header/Navbar style */
+.header {
+  padding: 15px;
+  background-color: #2b2b2b;
+}
+.header .container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+.header .links {
+  position: relative;
+}
+li,
+a {
+  color: white;
+  text-decoration: none;
+}
+.logo {
+  cursor: pointer;
+  margin-left: 30px;
+  margin-bottom: -15px;
+}
+.navLinks {
+  list-style: none;
+}
+.navLinks li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+.links {
+  margin-left: auto;
+  padding-right: 20px;
+  margin-top: -5px;
+  margin-bottom: -5px;
+}
+.material-symbols-rounded {
+  font-size: 25px;
+  transition: all 0.3s ease 0s;
+  display: inline;
+  cursor: pointer;
+}
+.rightNav {
+  margin-left: 20px;
+}
+.navLinks li a {
+  transition: all 0.3s ease 0s;
+}
+.navLinks li a:hover,
+.header .material-symbols-rounded:hover {
+  color: #fdd835;
+}
+.logo svg:hover path {
+  fill: #fdd835;
+}
+
+/* Body style */
+.body {
+  margin: 10px;
+}
+.body .container {
+  padding: 10px;
+}
+.body .container h1 {
+  font-size: 20px;
+}
+.cardContainer {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.card {
+  background-color: #18181a;
+  border: 1px solid #18181a;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: calc((100% / 4) - 20px);
+  text-align: center;
+}
+.card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+.card .name {
+  margin: 10px 0px 15px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.card .description {
+  margin: 0px 25px;
+  font-size: 12px;
+  color: rgb(170, 170, 170);
+  font-weight: 100;
+}
+.card .price {
+  margin: 20px 25px;
+  font-size: 20px;
+  font-weight: 500;
+  display: inline-block;
+}
+.card .discount {
+  font-size: 20px;
+  font-weight: 100;
+  color: rgb(170, 170, 170);
+  text-decoration: line-through;
+  display: inline-block;
+}
+.cardButtom {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.cardButtom button{
+  padding: 5px;
+  width: 40%;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.card .quantity {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 20px;
+  width: 40%;
+  border: 1px solid #ddd;
+  border-radius:5px ;
+}
+.card .quantity button {
+  background-color: #18181a;
+  border: none;
+  width: 10%px;
+}
+.card .quantity input {
+  background-color: #18181a;
+  border: none;
+  width: 70%;
+  text-align: center;
+}
+.addToCartBtn {
+  background-color: #fdd835;
+  color: white;
+  border: none;
+}
+.addToCartBtn:hover {
+  background-color: #a48c21;
+}
+
+.cardAdd {
+  display: flex;
+  flex-direction: column;
+  background-color: #18181a;
+  border: 1px solid #18181a;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: calc((100% / 4) - 20px);
+  text-align: center;
+  justify-content: space-evenly;
+}
+.cardAdd input {
+  background-color: #474747;
+  border: 0;
+  outline: none;
+  width: calc((100%) - 30px);
+  color: #fff;
+  border-radius: 5px;
+  margin: 15px;
+  padding: 5px 15px;
+  transition: all 0.3s ease 0s;
+  height: calc((100% / 6) - 30px);
+  font-size: 20;
+}
+.cardAdd input:hover {
+  scale: 1.05;
+}
+.cardAdd button {
+  background-color: #fdd835;
+  border: 0;
+  outline: none;
+  width: calc((100%) - 30px);
+  color: #fff;
+  border-radius: 5px;
+  margin: 15px;
+  padding: 5px;
+  transition: all 0.3s ease 0s;
+  height: calc((100% / 6) - 30px);
+  font-size: 20px;
+}
+.cardAdd button:hover {
+  background-color: #a48c21;
+}
+.search {
+  display: flex;
+  gap: 10px;
+}
+.search input {
+  background-color: #474747;
+  border: 0;
+  outline: none;
+  height: 50px;
+  color: #fff;
+  border-radius: 5px;
+  margin: 20px 0px;
+  padding: 5px;
+  transition: all 0.3s ease 0s;
+  font-size: 20px;
+  flex: 4;
+}
+.search select {
+  background-color: #474747;
+  border: 0;
+  outline: none;
+  height: 50px;
+  color: #fff;
+  border-radius: 5px;
+  margin: 20px 0px;
+  padding: 5px;
+  transition: all 0.3s ease 0s;
+  font-size: 20px;
+  flex: 1;
+}
+
+.crudBtn  {
+  background-color: rgba(255, 0, 0, 0);
+  color: #fd6435;
+  border: 3px solid #fd6435;
+}
+.crudBtn:hover{
+  background-color: #fd6435;
+}
+.crudBtn .material-symbols-rounded{
+  color: #fd6435;
+}
+.crudBtn:hover  .material-symbols-rounded{
+  color: #fff;
+}
+

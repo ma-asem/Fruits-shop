@@ -1,0 +1,45 @@
+/* Global rules */
+* {
+  box-sizing: border-box;
+  color: white;
+  text-decoration: none;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #1E1E1E;
+  
+}
+html{
+  scroll-behavior: smooth;
+
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+@media (max-width: 600px) {
+  .container {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}
+@media (min-width: 601px) and (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  .container {
+    max-width: 95%;
+    padding: 0 20px;
+  }
+}
+@media (min-width: 1201px) {
+  .container {
+    max-width: 1200px;
+    padding: 0 30px;
+  }
+}
