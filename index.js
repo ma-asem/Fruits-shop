@@ -201,26 +201,10 @@ function deleteAll() {
   writeCard();
 }
 
-
 // (CRUDS) Search
-function search(type) {
-  document.getElementById("search").addEventListener("keyup", () => {
-    for (let i = 0; i < productData.length; i++) {
-      if (
-        productData[i][type]
-          .toLowerCase()
-          .includes(document.getElementById("search").value.toLowerCase())
-      ) {
-        document.getElementById(`card-${i}`).style.display = "block";
-      } else {
-        document.getElementById(`card-${i}`).style.display = "none";
-      }
-    }
-  });
-}
+document.getElementById("menu").addEventListener("change", searchType);
 
-// Choose search type
-document.getElementById("menu").addEventListener("change", () => {
+function searchType() {
   switch (document.getElementById("menu").value) {
     case "name":
       search("name");
@@ -238,4 +222,22 @@ document.getElementById("menu").addEventListener("change", () => {
       search("discount");
       break;
   }
-});
+}
+searchType();
+function search(type) {
+  document.getElementById("search").addEventListener("keyup", () => {
+    for (let i = 0; i < productData.length; i++) {
+      if (
+        productData[i][type]
+          .toLowerCase()
+          .includes(document.getElementById("search").value.toLowerCase())
+      ) {
+        document.getElementById(`card-${i}`).style.display = "block";
+      } else {
+        document.getElementById(`card-${i}`).style.display = "none";
+      }
+    }
+  });
+}
+
+// Choose search type
