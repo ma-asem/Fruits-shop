@@ -74,13 +74,17 @@ a {
   gap: 20px;
 }
 .card {
-  background-color: #18181a;
-  border: 1px solid #18181a;
+  background-color: #262626;
+  border: 1px solid #262626;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: calc((100% / 4) - 20px);
   text-align: center;
+  transition: all 0.3s ease 0s;
+}
+.card:hover {
+  scale: 1.03;
 }
 .card img {
   width: 100%;
@@ -119,12 +123,13 @@ a {
   flex-wrap: wrap;
   gap: 15px;
 }
-.cardButtom button{
+.cardButtom button {
   padding: 5px;
   width: 40%;
   cursor: pointer;
   border-radius: 5px;
 }
+
 .card .quantity {
   display: flex;
   justify-content: space-evenly;
@@ -132,15 +137,15 @@ a {
   font-size: 20px;
   width: 40%;
   border: 1px solid #ddd;
-  border-radius:5px ;
+  border-radius: 5px;
 }
 .card .quantity button {
-  background-color: #18181a;
+  background-color: #262626;
   border: none;
   width: 10%px;
 }
 .card .quantity input {
-  background-color: #18181a;
+  background-color: #262626;
   border: none;
   width: 70%;
   text-align: center;
@@ -157,8 +162,8 @@ a {
 .cardAdd {
   display: flex;
   flex-direction: column;
-  background-color: #18181a;
-  border: 1px solid #18181a;
+  background-color: #262626;
+  border: 1px solid #262626;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: calc((100% / 4) - 20px);
@@ -193,6 +198,7 @@ a {
   transition: all 0.3s ease 0s;
   height: calc((100% / 6) - 30px);
   font-size: 20px;
+  cursor: pointer;
 }
 .cardAdd button:hover {
   background-color: #a48c21;
@@ -228,18 +234,37 @@ a {
   flex: 1;
 }
 
-.crudBtn  {
+.crudBtn {
   background-color: rgba(255, 0, 0, 0);
   color: #fd6435;
   border: 3px solid #fd6435;
 }
-.crudBtn:hover{
+.crudBtn:hover {
   background-color: #fd6435;
 }
-.crudBtn .material-symbols-rounded{
+.crudBtn .material-symbols-rounded {
   color: #fd6435;
 }
-.crudBtn:hover  .material-symbols-rounded{
+.crudBtn:hover .material-symbols-rounded {
   color: #fff;
 }
 
+#deleteAll {
+  background-color: #fd3535;
+  display: none;
+}
+
+#delete {
+  background-color: #fd3535;
+}
+
+#cancel {
+  background-color: #474747;
+}
+.deleteAll {
+  display: flex;
+}
+.deleteAll button {
+  height: 65%;
+  display: none;
+}

@@ -115,10 +115,15 @@ function writeCard() {
                 <input type="number" id="price" placeholder="Price" />
                 <input type="number" id="discount" placeholder="Discount" />
                 <button id="btn">Add</button>
+                <button id="deleteAll">Delete all</button>
+                <div class="deleteAll">
+                <button id="delete">Delete</button>
+                <button id="cancel">Cancel</button>
+                </div>
               </div>`;
 
   for (let i = 0; i < productData.length; i++) {
-    card += `<div class="card">
+    card += `<div class="card" id="card-${i}">
                 <img src="${productData[i].url}" />
                 <div class="name">${productData[i].name}</div>
                 <div class="description">${productData[i].description}</div>
@@ -151,8 +156,25 @@ function writeCard() {
       updateBtn();
     }
   });
-}
 
+  // Delete buttons
+  if (productData.length > 0) {
+    document.getElementById("deleteAll").style.display = "inline-block";
+  }
+  document.getElementById("deleteAll").addEventListener("click", () => {
+    document.getElementById("deleteAll").style.display = "none";
+    document.getElementById("delete").style.display = "inline-block";
+    document.getElementById("cancel").style.display = "inline-block";
+  });
+  document.getElementById("cancel").addEventListener("click", () => {
+    document.getElementById("deleteAll").style.display = "inline-block";
+    document.getElementById("delete").style.display = "none";
+    document.getElementById("cancel").style.display = "none";
+  });
+  document.getElementById("delete").addEventListener("click", () => {
+    deleteAll();
+  });
+}
 // (CRUDS) Update
 function updateCard(i) {
   document.getElementById("url").value = productData[i].url;
@@ -172,3 +194,48 @@ function deleteCard(i) {
   localStorage.setItem("product", JSON.stringify(productData));
   writeCard();
 }
+
+function deleteAll() {
+  productData = [];
+  localStorage.setItem("product", JSON.stringify(productData));
+  writeCard();
+}
+
+
+// (CRUDS) Search
+function search(type) {
+  document.getElementById("search").addEventListener("keyup", () => {
+    for (let i = 0; i < productData.length; i++) {
+      if (
+        productData[i][type]
+          .toLowerCase()
+          .includes(document.getElementById("search").value.toLowerCase())
+      ) {
+        document.getElementById(`card-${i}`).style.display = "block";
+      } else {
+        document.getElementById(`card-${i}`).style.display = "none";
+      }
+    }
+  });
+}
+
+// Choose search type
+document.getElementById("menu").addEventListener("change", () => {
+  switch (document.getElementById("menu").value) {
+    case "name":
+      search("name");
+      break;
+    case "url":
+      search("url");
+      break;
+    case "description":
+      search("description");
+      break;
+    case "price":
+      search("price");
+      break;
+    case "discount":
+      search("discount");
+      break;
+  }
+});
